@@ -1,10 +1,10 @@
 from rest_framework import viewsets
-from .models import User
+from .models import Client
 from .serializers import UserSerializer
-from .permissions import UserPermission
+from .permissions import IsOwnerOrReadOnly
 
 
 class UserViewset(viewsets.ModelViewSet):
-    queryset = User.objects.all()
+    queryset = Client.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (UserPermission,)
+    permission_classes = (IsOwnerOrReadOnly,)

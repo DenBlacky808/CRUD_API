@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class User(models.Model):
+class Client(models.Model):
     username = models.CharField(verbose_name='Username', max_length=150)
     first_name = models.CharField(verbose_name='FirstName', max_length=30)
     last_name = models.CharField(verbose_name='LastName', max_length=150)
